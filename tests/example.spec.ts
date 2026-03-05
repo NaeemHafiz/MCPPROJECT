@@ -25,3 +25,12 @@ test('validate google page title', async ({ page }) => {
   await expect(page).toHaveTitle('Google');
 });
 
+test('validate whatsapp page title contains Whatsapp', async ({ page }) => {
+  // Navigate to whatsapp web
+  await page.goto('https://web.whatsapp.com/');
+
+  // Validate page title contains "Whatsapp"
+  await expect(page).toHaveTitle(/Whatsapp/i);
+});
+
+
