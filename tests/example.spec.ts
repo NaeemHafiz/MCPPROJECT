@@ -16,3 +16,12 @@ test('login with valid credentials', async ({ page }) => {
   // Verify the success message contains "You logged into a secure area!"
   await expect(page.locator('.flash.success')).toContainText('You logged into a secure area!');
 });
+
+test('validate google page title', async ({ page }) => {
+  // Navigate to google.com
+  await page.goto('https://google.com');
+
+  // Validate page title is "Google"
+  await expect(page).toHaveTitle('Google');
+});
+
